@@ -2,8 +2,8 @@
  * 🎬 The Starlight Cinema
  *
  * You've just been hired at Starlight Cinema! Your first task is to build
- * the automated ticket pricing system. The manager hands you a sticky note
- * with the pricing rules scribbled on it:
+ * the automated ticket ticket_price system. The manager hands you a sticky note
+ * with the ticket_price rules scribbled on it:
  *
  * Age Groups:
  *   - Children (0–12): $8
@@ -23,5 +23,61 @@
  * @returns {number} The ticket price, or -1 for invalid input
  */
 export function getTicketPrice(age, isWeekend) {
-  // Your code here
+  let ticket_price = 0;
+  if (age < 0 || age == NaN) return -1;
+
+  if (!isWeekend) {
+    if (age <= 12) {
+      ticket_price += 8;
+      console.log(
+        `your age is in chidren category and you your ticket price is ${ticket_price}`
+      );
+    } else if (age <= 17) {
+      ticket_price += 12;
+      console.log(
+        `your age is in teen category and you your ticket price is ${ticket_price}`
+      );
+    } else if (age <= 59) {
+      ticket_price += 15;
+      console.log(
+        `your age is in adult category and you your ticket price is ${ticket_price}`
+      );
+    } else {
+      ticket_price += 10;
+      console.log(
+        `your age is in senior category and you your ticket price is ${ticket_price}`
+      );
+    }
+    return ticket_price;
+  }
+
+  // if it's a weekend
+  if (isWeekend) {
+    ticket_price = 3;
+    if (age <= 12) {
+      ticket_price += 8;
+      console.log(
+        `your age is in chidren category and you your ticket price is ${ticket_price}`
+      );
+    } else if (age <= 17) {
+      ticket_price += 12;
+      console.log(
+        `your age is in teen category and you your ticket price is ${ticket_price}`
+      );
+    } else if (age <= 59) {
+      ticket_price += 15;
+      console.log(
+        `your age is in adult category and you your ticket price is ${ticket_price}`
+      );
+    } else {
+      ticket_price += $10;
+      console.log(
+        `your age is in senior category and you your ticket price is ${ticket_price}`
+      );
+    }
+    return ticket_price;
+  }
 }
+
+let  result = getTicketPrice(45, true);
+console.log(result);
