@@ -70,7 +70,7 @@ export function getTicketPrice(age, isWeekend) {
         `your age is in adult category and you your ticket price is ${ticket_price}`
       );
     } else {
-      ticket_price += $10;
+      ticket_price += 10;
       console.log(
         `your age is in senior category and you your ticket price is ${ticket_price}`
       );
