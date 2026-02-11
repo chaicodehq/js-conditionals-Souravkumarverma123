@@ -31,4 +31,71 @@
  */
 export function calculateTip(billAmount, serviceRating) {
   // Your code here
+  if (billAmount <= 0) return null;
+
+  // Check if serviceRating is an integer between 1 and 5
+  if (!Number.isInteger(serviceRating) || serviceRating < 1 || serviceRating > 5) return null;
+
+  let tipAmount;
+  let tipPercentage;
+  let totalAmount;
+
+  if (serviceRating === 1) {
+    tipPercentage = 5;
+    tipAmount = (0.05 * billAmount)
+    totalAmount = billAmount + tipAmount;
+
+    return {
+      "tipPercentage": Number(tipPercentage),
+      "tipAmount": Number(tipAmount.toFixed(2)),
+      "totalAmount": Number(totalAmount.toFixed(2))
+    }
+  }
+  if (serviceRating === 2) {
+    tipPercentage = 10;
+    tipAmount = (0.1 * billAmount);
+    totalAmount = billAmount + tipAmount;
+    return {
+      "tipPercentage": Number(tipPercentage),
+      "tipAmount": Number(tipAmount.toFixed(2)),
+      "totalAmount": Number(totalAmount.toFixed(2))
+    }
+  }
+  if (serviceRating === 3) {
+    tipPercentage = 15;
+    tipAmount = (0.15 * billAmount);
+    totalAmount = billAmount + tipAmount;
+    return {
+      "tipPercentage": Number(tipPercentage),
+      "tipAmount": Number(tipAmount.toFixed(2)),
+      "totalAmount": Number(totalAmount.toFixed(2))
+    }
+  }
+  if (serviceRating === 4) {
+    tipPercentage = 20;
+    tipAmount = (0.20 * billAmount);
+    totalAmount = billAmount + tipAmount;
+
+    return {
+      "tipPercentage": Number(tipPercentage),
+      "tipAmount": Number(tipAmount.toFixed(2)),
+      "totalAmount": Number(totalAmount.toFixed(2))
+    }
+  }
+  if (serviceRating === 5) {
+    tipPercentage = 25;
+    tipAmount = (0.25 * billAmount);
+    totalAmount = billAmount + tipAmount;
+
+    return {
+      "tipPercentage": (tipPercentage),
+      "tipAmount": Number(tipAmount.toFixed(2)),
+      "totalAmount": Number(totalAmount.toFixed(2))
+    }
+  }
 }
+
+let final_output = calculateTip(5000, 3)
+console.log(final_output);
+
+
